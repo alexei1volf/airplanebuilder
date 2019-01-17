@@ -17,5 +17,5 @@ dependencies {
     testCompile('junit:junit:4.12')
     testCompile('org.assertj:assertj-core:3.11.1')
     testCompile('org.apache.tomee:tomee-embedded:7.1.0')
-    testCompile('org.mockito:mockito-all:1.10.19')
+    testCompile('org.mockito:mockito-core:2.23.4')
 }
