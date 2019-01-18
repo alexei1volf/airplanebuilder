@@ -13,21 +13,11 @@ public class AirplaneBuilder {
     public Airplane build() {
         Airplane tu134 = new Airplane();
 
-        try {
-            LifeJacket lifeJacket = lifeJacketBuilder.build();
-            tu134.setLifeJacket(lifeJacket);
+        Engine engine = engineBuilder.build();
+        tu134.setEngine(engine);
 
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
-
-        try {
-            Engine engine = engineBuilder.build();
-            tu134.setEngine(engine);
-
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
+        LifeJacket lifeJacket = lifeJacketBuilder.build();
+        tu134.setLifeJacket(lifeJacket);
 
         return tu134;
     }

@@ -14,7 +14,7 @@ public class AirplaneBuilderTest {
     private static Context ctx;
 
     @Rule
-    public ExpectedException exceptionRule = ExpectedException.none();
+    public ExpectedException expectedException = ExpectedException.none();
 
     @BeforeClass
     public static void setUp() {
@@ -32,11 +32,10 @@ public class AirplaneBuilderTest {
     }
 
     @Test
-    public void airplaneDontHaveEngineOooops() throws Exception {
+    public void exceptionShouldBeThrownWhenBuildAnAirplane() throws Exception {
         AirplaneBuilder builder = (AirplaneBuilder) ctx.lookup("java:global/task/AirplaneBuilder");
 
-        Airplane tu134 = builder.build();
-
-        Assert.assertNull(tu134.getEngine());
+        expectedException.expect(Exception.class);
+        Airplane airplane = builder.build();
     }
 }

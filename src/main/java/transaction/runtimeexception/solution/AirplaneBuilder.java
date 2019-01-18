@@ -18,18 +18,12 @@ public class AirplaneBuilder {
         try {
             LifeJacket lifeJacket = lifeJacketBuilder.build();
             tu134.setLifeJacket(lifeJacket);
-
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
 
-        try {
-            Engine engine = engineBuilder.build();
-            tu134.setEngine(engine);
-
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
+        Engine engine = engineBuilder.build();
+        tu134.setEngine(engine);
 
         return tu134;
     }
