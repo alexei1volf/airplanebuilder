@@ -7,7 +7,7 @@ import javax.ejb.TransactionAttributeType;
 @Stateless
 public class LifeJacketBuilder {
     @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
-    public LifeJacket build() {
-        throw new RuntimeException("can not build life jacket");
+    public LifeJacket build() throws LifeJacketBuildException {
+        throw new LifeJacketBuildException("can not build life jacket");
     }
 }

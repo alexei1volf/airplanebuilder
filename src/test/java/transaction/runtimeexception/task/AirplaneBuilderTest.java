@@ -32,10 +32,11 @@ public class AirplaneBuilderTest {
     }
 
     @Test
-    public void exceptionShouldBeThrownWhenBuildAnAirplane() throws Exception {
+    public void shouldBuildAirplaneButSomeException() throws Exception {
         AirplaneBuilder builder = (AirplaneBuilder) ctx.lookup("java:global/task/AirplaneBuilder");
 
-        expectedException.expect(Exception.class);
         Airplane airplane = builder.build();
+
+        Assert.assertNotNull(airplane);
     }
 }
